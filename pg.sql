@@ -47,7 +47,7 @@ DECLARE
   _warn BIGINT;
 BEGIN
 FOR _id,_kind,_name,_warn IN 
-  SELECT h.id,h.kind,h.name,h.warn FROM state.heartbeat h WHERE err=FALSE AND warn>0
+  SELECT h.id,h.kind,h.name,h.warn FROM state.heartbeat h WHERE err=FALSE AND h.warn>0
 LOOP
   UPDATE state.heartbeat t SET t.warn=0 WHERE t.id=_id AND err=FALSE;
   RETURN NEXT; 
