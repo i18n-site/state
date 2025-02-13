@@ -7,6 +7,7 @@ import { EmailMessage } from 'cloudflare:email'
 sendmail = (sender, from_name, from, to, subject, txt) =>
   raw = [
     'MIME-Version: 1.0'
+    'Message-ID: '+ Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('base64url')
     "From: #{JSON.stringify(from_name)}<#{from}>"
     "To: #{to}"
     "Subject: #{subject}"
@@ -14,7 +15,6 @@ sendmail = (sender, from_name, from, to, subject, txt) =>
     ''
     txt
   ].join('\r\n')
-  console.log {sender, from, to, raw}
   message = new EmailMessage(
     from, to, raw
   )
