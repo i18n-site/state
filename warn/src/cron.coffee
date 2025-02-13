@@ -11,8 +11,8 @@ export default (env, {LI,EXE})=>
     expire_li
     recover_li
   ] = await Promise.all [
-    LI"SELECT id,kind,name,warn,ts,state FROM state.heartbeat WHERE err=true AND ts_next<#{now}"
-    LI"SELECT id,kind,name,warn,ts_next FROM state.heartbeat WHERE ts_next>=#{now}"
+    LI"SELECT id,kind,name,warn,ts,state FROM state.heartbeat WHERE err=true AND #{now}<=ts_next"
+    LI"SELECT id,kind,name,warn,ts_next FROM state.heartbeat WHERE #{now}>ts_next"
     LI"SELECT * FROM fn.heartbeatRecover()"
   ]
 
