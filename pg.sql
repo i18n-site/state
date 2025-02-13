@@ -10,7 +10,7 @@ name character varying(255) NOT NULL,
 ts bigint NOT NULL,
 ts_next bigint NOT NULL,
 state text,
-warn integer NOT NULL DEFAULT 0,
+warn bigint NOT NULL DEFAULT 0,
 err BOOLEAN NOT NULL DEFAULT FALSE,
 PRIMARY KEY (id),
 UNIQUE (kind,name)
@@ -44,9 +44,10 @@ DECLARE
   _id BIGINT;
   _kind VARCHAR;
   _name VARCHAR;
+  _warn BIGINT;
 BEGIN
-FOR _id,_kind,_name IN 
-  SELECT h.id,h.kind,h.name FROM state.heartbeat h WHERE err=FALSE AND warn>0
+FOR _id,_kind,_name,_warn IN 
+  SELECT h.id,h.kind,h.name,h.warn FROM state.heartbeat h WHERE err=FALSE AND warn>0
 LOOP
   UPDATE state.heartbeat t SET warn=0 WHERE t.id=_id AND err=FALSE;
   RETURN NEXT; 
