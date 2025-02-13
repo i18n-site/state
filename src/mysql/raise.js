@@ -1,5 +1,5 @@
-import raise from '@8v/raise'
+import raise from "@8v/raise";
 
 class MySqlError extends Error {}
 
-export default raise(MySqlError)
+export default raise(MySqlError);

@@ -2,6 +2,7 @@
 
 > ./conf/mysql.js
   ./Ping.js
+  @8v/send/init.js:
   @8v/heartbeat/wrap.js
 
 KIND = 'mysql'
