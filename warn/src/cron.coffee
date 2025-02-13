@@ -43,8 +43,8 @@ export default (env, {LI,EXE,UNSAFE})=>
       "UPDATE state.heartbeat SET err=true AND warn=warn+1 WHERE id IN (#{warn_incr_id_li.join(',')})"
     )
 
-  for [id,kind,name] in recover_li
-    ing.push send('✅ ' + kind + ' ' + name)
+  for [id,kind,name,warn] in recover_li
+    ing.push send('✅ ' + kind + ' ' + name, '持续时间 '+hsec(warn))
 
   for i from await Promise.allSettled ing
     if i.reason
