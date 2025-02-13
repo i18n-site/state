@@ -5,6 +5,9 @@
       "dependencies": {
         "@3-/nowts": "^0.1.1",
         "@3-/retry": "^0.0.2",
+        "@8v/heartbeat": "^0.1.17",
+        "@8v/pg": "^0.1.3",
+        "@8v/raise": "^0.1.4",
         "@8v/send": "^0.1.7",
         "@hono/node-server": "^1.13.8",
         "ansis": "^3.14.0",
@@ -49,9 +52,17 @@
 
     "@8v/curl": ["@8v/curl@0.1.6", "", {}, "sha512-6QGUJGHhh27wXssfBZEvCoX8YUVZOh155NEY282tJ9MGHOEBSppdbpMOGWaVYi1q+Gsi2IolBER6QvBBC21MaQ=="],
 
+    "@8v/heartbeat": ["@8v/heartbeat@0.1.17", "", { "dependencies": { "@8v/pg": "^0.1.3", "@8v/send": "^0.1.7" } }, "sha512-VHHVad2v0//3pqOlHPOgG3yEsDUlTI0uSDCF5KDbb/hDDqfVIG3N+q1N4wumQxgp1qo1MtDqupUALANHIk6g/A=="],
+
     "@8v/lark": ["@8v/lark@0.1.5", "", { "dependencies": { "@8v/curl": "^0.1.6" } }, "sha512-BP9ONQPKK1L+Y01bIPwgo/sq3avkz2M9kq9NSyDrQ6npZDVxM5uWEts4Bt3I65+0IMnVrQE4bYYx9hnTlJw3wA=="],
 
+    "@8v/pg": ["@8v/pg@0.1.3", "", { "dependencies": { "ansis": "^3.12.0", "prexit": "^2.3.0" }, "peerDependencies": { "@3-/write": "^0.0.1", "postgres": "^3.4.4" } }, "sha512-WIBaav88GgwZxW33KfhtDUEoitDcFK6MGuoTUo1AdGuN8EFjX+wLKa82qPX8T1dkyxyyStfefnhFOe7p+uJhTw=="],
+
+    "@8v/raise": ["@8v/raise@0.1.4", "", { "dependencies": { "@8v/yml": "^0.1.3" } }, "sha512-WQ6Mt9pmmzsXbTxHbT7x5Y4P2aXY1jBqaUzfIkGM7LwsWetc5Q7V3D/5SitHURVvNpEkr4Bs45lKHvdOz0g2Iw=="],
+
     "@8v/send": ["@8v/send@0.1.7", "", { "dependencies": { "@8v/lark": "^0.1.3" } }, "sha512-tODSvEdvjDQJFPyGEkSY3k1Hjixq2fxoSIX9LxQNrjCedGlsCnHrVIgXWF+h8f2QjHKF/+kvxnVNE3Bz+0mY4Q=="],
+
+    "@8v/yml": ["@8v/yml@0.1.3", "", { "dependencies": { "js-yaml": "^4.1.0" } }, "sha512-NFSyDlrRYKFZRF3AnOgO3AmKOAU52WWw48+Dz1P4da08lTR6MHa5EWZBgNBUvBJfFyZzIYupN6ycggZ1sUhs6w=="],
 
     "@hono/node-server": ["@hono/node-server@1.13.8", "", { "peerDependencies": { "hono": "^4" } }, "sha512-fsn8ucecsAXUoVxrUil0m13kOEq4mkX4/4QozCqmY+HpGfKl74OYSn8JcMA8GnG0ClfdRI4/ZSeG7zhFaVg+wg=="],
 
@@ -160,6 +171,10 @@
     "normalize-path": ["normalize-path@3.0.0", "", {}, "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="],
 
     "picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
+
+    "postgres": ["postgres@3.4.5", "", {}, "sha512-cDWgoah1Gez9rN3H4165peY9qfpEo+SA61oQv65O3cRUE1pOEoJWwddwcqKE8XZYjbblOJlYDlLV4h67HrEVDg=="],
+
+    "prexit": ["prexit@2.3.0", "", {}, "sha512-mX+LIbtS0anKtl2PykYabxninwloblUQMRO6CubeSmjxb+kKlATuJoH9UeN8NLE4TgIEFWfBXw7V3GkWbBrSmg=="],
 
     "pstree.remy": ["pstree.remy@1.1.8", "", {}, "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w=="],
 
