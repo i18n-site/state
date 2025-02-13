@@ -10,7 +10,7 @@ name character varying(255) NOT NULL,
 ts bigint NOT NULL,
 ts_next bigint NOT NULL,
 state text,
-warn bigint NOT NULL DEFAULT 0,
+warn integer NOT NULL DEFAULT 0,
 err BOOLEAN NOT NULL DEFAULT FALSE,
 PRIMARY KEY (id),
 UNIQUE (kind,name)
@@ -26,14 +26,14 @@ DECLARE
   _err BOOLEAN;
 BEGIN
   SELECT id,err,ts INTO _id,_err,_pre_ts FROM state.heartbeat WHERE name=_name AND kind=_kind;
-  IF _id IS NOT NULL THEN
+  IF _id IS NULL THEN
+    INSERT INTO state.heartbeat(kind,name,ts,ts_next,state)VALUES(_kind,_name,_ts,_ts+_duration,_state);
+  ELSE
     IF _err THEN
       UPDATE state.heartbeat SET ts=_ts,ts_next=_ts+_duration,state=_state,err=false,warn=_ts-_pre_ts WHERE id=_id;
     ELSE
       UPDATE state.heartbeat SET ts=_ts,ts_next=_ts+_duration,state=_state WHERE id=_id;
     END IF;
-  ELSE
-    INSERT INTO state.heartbeat(kind,name,ts,ts_next,state)VALUES(_kind,_name,_ts,_ts+_duration,_state);
   END IF;
 END;
 $$ LANGUAGE plpgsql;
