@@ -19,9 +19,11 @@ export default (env, {LI,EXE})=>
   warn_incr_id_li = []
   ing = []
 
+  # console.log JSON.stringify {err_li, expire_li, recover_li},null,2
   sendwarn = (type,li)=>
-    for [id,kind,name,warn,ts,state] in err_li
+    for [id,kind,name,warn,ts,state] in li
       diff = now - ts
+      # console.log(diff, warn,needwarn(diff, warn))
       if needwarn(diff, warn)
         warn_incr_id_li.push id
         msg = '故障持续 '+hsec(diff)

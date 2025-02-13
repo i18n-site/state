@@ -38,7 +38,7 @@ BEGIN
 FOR _id,_kind,_name IN 
   SELECT h.id,h.kind,h.name AS original_name FROM state.heartbeat h WHERE err=FALSE AND warn>0
 LOOP
-  UPDATE state.heartbeat SET warn=0 WHERE id=_id AND err=FALSE;
+  UPDATE state.heartbeat t SET warn=0 WHERE t.id=_id AND err=FALSE;
   RETURN NEXT; 
 END LOOP;
 END;
