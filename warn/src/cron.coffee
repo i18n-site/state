@@ -29,7 +29,7 @@ export default (env, {LI,EXE})=>
         msg = '故障持续 '+hsec(diff)
         if state
           msg += '\n'+state
-        ing.push warn(
+        ing.push send(
           '❌ ' + kind + ' ' + name + ' ' + type
           msg
         )
