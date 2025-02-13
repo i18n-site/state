@@ -3,7 +3,7 @@
   @8v/hsec
   @8v/send
 
-export default (env, {LI,EXE})=>
+export default (env, {LI,EXE,UNSAFE})=>
   now = nowts()
 
   [
@@ -39,7 +39,9 @@ export default (env, {LI,EXE})=>
   sendwarn('监控挂了', expire_li)
 
   if warn_incr_id_li.length
-    ing.push EXE"UPDATE state.heartbeat SET err=true AND warn=warn+1 WHERE id IN (#{warn_incr_id_li.join(',')})"
+    ing.push UNSAFE(
+      "UPDATE state.heartbeat SET err=true AND warn=warn+1 WHERE id IN (#{warn_incr_id_li.join(',')})"
+    )
 
   for [id,kind,name] in recover_li
     ing.push send('✅ ' + kind + ' ' + name)
@@ -47,5 +49,5 @@ export default (env, {LI,EXE})=>
   for i from await Promise.allSettled ing
     if i.reason
       throw i.reason
-
+  console.log 'done !!!!'
   return

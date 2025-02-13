@@ -13,9 +13,10 @@ sendmail = (sender, from_name, from, to, subject, txt) =>
     'Content-Type: text/plain; charset=UTF-8'
     ''
     txt
-  ]
+  ].join('\r\n')
+  console.log {sender, from, to, raw}
   message = new EmailMessage(
-    from, to, raw.join('\r\n')
+    from, to, raw
   )
   sender.send(message)
 
