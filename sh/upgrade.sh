@@ -11,4 +11,4 @@ if ! command -v molt &>/dev/null; then
 fi
 
 cd src
-fd deno.jsonc -x bash -c 'DIR=$(dirname "{}") && echo -e $DIR && cd $DIR && molt --no-lock --commit'
+fd deno.jsonc -x bash -c 'DIR=$(dirname "{}") && echo -e $DIR && cd $DIR && deno outdated --update --latest && molt --no-lock --commit'
