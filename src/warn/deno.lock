@@ -4,7 +4,7 @@
     "jsr:@8v/apimail@~0.1.3": "0.1.3",
     "jsr:@8v/cron@~0.1.1": "0.1.1",
     "jsr:@8v/curl@~0.1.6": "0.1.6",
-    "jsr:@8v/heartbeat@~0.1.26": "0.1.26",
+    "jsr:@8v/heartbeat@~0.1.27": "0.1.27",
     "jsr:@8v/hsec@~0.1.2": "0.1.2",
     "jsr:@8v/lark@~0.1.5": "0.1.5",
     "jsr:@8v/needwarn@~0.1.4": "0.1.4",
@@ -30,8 +30,8 @@
     "@8v/curl@0.1.6": {
       "integrity": "3a468cbdfb4b0898506012e90ebce7e1c0e7fd39eb09b07ee886dfa2a2f884a5"
     },
-    "@8v/heartbeat@0.1.26": {
-      "integrity": "d9ec260af62825d8408df77420607d7797119f2a88065010fa3925e4e430e22f",
+    "@8v/heartbeat@0.1.27": {
+      "integrity": "c6edd3ac1caa33ac4cd889d0e0d08bf502c99943f409f00e13523497ba5ee3a3",
       "dependencies": [
         "jsr:@8v/hsec",
         "jsr:@8v/pg",
@@ -94,7 +94,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@8v/cron@~0.1.1",
-      "jsr:@8v/heartbeat@~0.1.26",
+      "jsr:@8v/heartbeat@~0.1.27",
       "jsr:@8v/hsec@~0.1.2",
       "jsr:@8v/needwarn@~0.1.4",
       "jsr:@8v/pg@~0.1.3",

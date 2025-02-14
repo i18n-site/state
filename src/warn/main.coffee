@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
 > ./Ping.js
-  @8v/heartbeat
+  @8v/heartbeat/kind.js:heartbeat
   @8v/cron
 
 KIND = 'warn'

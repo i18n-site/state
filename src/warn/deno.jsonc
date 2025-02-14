@@ -2,7 +2,7 @@
   "imports": {
     "@3-/nowts": "npm:@3-/nowts@^0.1.1",
     "@8v/cron": "jsr:@8v/cron@^0.1.1",
-    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.26",
+    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.27",
     "@8v/hsec": "jsr:@8v/hsec@^0.1.2",
     "@8v/needwarn": "jsr:@8v/needwarn@^0.1.4",
     "@8v/pg": "jsr:@8v/pg@^0.1.3",
