@@ -23,7 +23,9 @@ DIR_ENV=$DIR/conf/env
 
 cat $DIR_ENV/api.cf.env $DIR_ENV/src.env >/tmp/state.env
 
-deployctl deploy --save-config=false --force --prod \
+deployctl deploy \
+  --save-config=false \
+  --force --prod \
   --env-file=/tmp/state.env
 
 set +x
