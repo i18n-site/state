@@ -1,13 +1,18 @@
 #!/usr/bin/env coffee
 
-> @x0/env:ENV
+> ./conf/_tmpl.js
+  ./Ping.js
+  @8v/heartbeat
+  @8v/cron
 
-import { Client } from 'postgres'
+KIND = '_tmpl'
 
-Deno.serve =>
-  {
-    PG_URL
-  } = ENV
+ping = heartbeat KIND, Ping, 300
 
-  new Response('good1')
+cron(
+  KIND
+  "* * * * *" # 定时运行
+  =>
+    Promise.allSettled Object.entries(_tmpl).map ping
+)
 
