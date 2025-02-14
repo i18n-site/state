@@ -29,13 +29,3 @@ deployctl deploy \
   --env-file=/tmp/state.env
 
 set +x
-
-case $(uname) in
-Darwin*)
-  open "https://$(cat deno.jsonc | jq -r '.deploy.project').deno.dev"
-  ;;
-  # Linux*)
-  #   ;;
-  # *)
-  #   ;;
-esac
