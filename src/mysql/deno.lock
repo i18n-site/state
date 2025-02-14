@@ -1,13 +1,14 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@8v/apimail@~0.1.3": "0.1.3",
     "jsr:@8v/curl@~0.1.6": "0.1.6",
-    "jsr:@8v/heartbeat@~0.1.22": "0.1.22",
+    "jsr:@8v/heartbeat@~0.1.23": "0.1.23",
     "jsr:@8v/hsec@~0.1.2": "0.1.2",
     "jsr:@8v/lark@~0.1.5": "0.1.5",
     "jsr:@8v/pg@~0.1.3": "0.1.3",
     "jsr:@8v/raise@~0.1.4": "0.1.4",
-    "jsr:@8v/send@~0.1.9": "0.1.9",
+    "jsr:@8v/send@~0.1.10": "0.1.10",
     "jsr:@8v/yml@~0.1.3": "0.1.3",
     "jsr:@std/yaml@^1.0.5": "1.0.5",
     "jsr:@y0/postgres@^3.4.5": "3.4.5",
@@ -15,11 +16,17 @@
     "npm:mysql2@^3.12.0": "3.12.0"
   },
   "jsr": {
+    "@8v/apimail@0.1.3": {
+      "integrity": "651ec467b648dd31b9c1375b2b7b356327b047aad3e8bc645c94ddf48c612df9",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
     "@8v/curl@0.1.6": {
       "integrity": "3a468cbdfb4b0898506012e90ebce7e1c0e7fd39eb09b07ee886dfa2a2f884a5"
     },
-    "@8v/heartbeat@0.1.22": {
-      "integrity": "49f6f89d70543a9febdea21f9993539ca9552df68b2011f71792840723daf160",
+    "@8v/heartbeat@0.1.23": {
+      "integrity": "ea73990f6d643c74286c031fd94926118811ed588cab552bba4e23d2de38afac",
       "dependencies": [
         "jsr:@8v/hsec",
         "jsr:@8v/pg",
@@ -48,9 +55,10 @@
         "jsr:@8v/yml"
       ]
     },
-    "@8v/send@0.1.9": {
-      "integrity": "7a5487e5f3275a3d335b24822c17b9a29da5e65f09b8fae676d1ccad80ce6d8c",
+    "@8v/send@0.1.10": {
+      "integrity": "79f046bcb33cd3ea43cb89d0205124bc02ab3d477bdde7512aa3d8038e84796a",
       "dependencies": [
+        "jsr:@8v/apimail",
         "jsr:@8v/lark"
       ]
     },
@@ -133,10 +141,10 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@8v/heartbeat@~0.1.22",
+      "jsr:@8v/heartbeat@~0.1.23",
       "jsr:@8v/pg@~0.1.3",
       "jsr:@8v/raise@~0.1.4",
-      "jsr:@8v/send@~0.1.9",
+      "jsr:@8v/send@~0.1.10",
       "npm:mysql2@^3.12.0"
     ]
   }
