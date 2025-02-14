@@ -1,17 +1,8 @@
-// const cmp0 = (a,b)=>a[0].localeCompare(b[0])
-//
-// const sortmap = (map)=>{
-//   map = [...Object.entries(map)]
-//   console.log(JSON.stringify(map))
-//   map.sort(cmp0)
-//   map.forEach((li)=>{
-//     li.sort(cmp0)
-//   })
-//   return map
-// }
+import Pg from './Pg.js'
 
-export default async (req, env, pg) => {
-  const ok = {}, err = {};
+export default async function() {
+  
+  const pg = Pg(this.env), ok = {}, err = {};
 
   (
     await pg`SELECT kind,err,name,ts,ts_next,state FROM state.heartbeat`
