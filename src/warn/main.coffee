@@ -7,12 +7,10 @@
 
 KIND = 'warn'
 
-ping = heartbeat KIND, Ping, 300
 
 cron(
   KIND
   "* * * * *" # 定时运行
-  =>
-    Promise.allSettled Object.entries(warn).map ping
+  heartbeat KIND, Ping, 300
 )
 

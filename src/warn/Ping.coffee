@@ -1,6 +1,4 @@
 > ./Conn.js
-  ./conf/IPV4.js:@ > IPV4_HOST
-  ./conf/warn.js > CONF
   ./raise.js
 
 _ping = (
