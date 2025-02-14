@@ -25,7 +25,7 @@ export default (env, {LI,EXE,UNSAFE})=>
       # console.log(diff, warn,needwarn(diff, warn))
       if needwarn(diff, warn)
         warn_incr_id_li.push id
-        msg = '故障持续 '+hsec(diff)
+        msg = '第'+(1+warn)+'次报警\n故障持续 '+hsec(diff)
         if state
           msg += '\n'+state
         ing.push send(
