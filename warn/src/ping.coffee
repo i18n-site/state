@@ -1,4 +1,4 @@
 #!/usr/bin/env coffee
 
-export default (c)=>
-  throw new Error('pong')
+export default ->
+  @env.NAME
