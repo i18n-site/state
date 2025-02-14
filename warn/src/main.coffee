@@ -1,9 +1,9 @@
-> ./cron.js
-  ./initSend.js
+> # ./cron.js
+  # ./initSend.js
   ./state.js
   postgres
   @3-/pg/pgConf.js
-  @3-/pg/genfunc.js
+  # @3-/pg/genfunc.js
   @8v/heartbeat
 
 pgConn = (env)=>postgres(...pgConf(env))
@@ -15,20 +15,20 @@ export default {
       pgConn(env)
     )
 
-  scheduled : (event, env, ctx) =>
-    initSend(env)
-    pg = pgConn(env)
-    await heartbeat(
-      pg
-      600
-      'warn'
-      'cf'
-      cron
-      [
-        env
-        genfunc(pg)
-      ]
-    )
-    return
+  # scheduled : (event, env, ctx) =>
+  #   initSend(env)
+  #   pg = pgConn(env)
+  #   await heartbeat(
+  #     pg
+  #     600
+  #     'warn'
+  #     'cf'
+  #     cron
+  #     [
+  #       env
+  #       genfunc(pg)
+  #     ]
+  #   )
+  #   return
 }
 
