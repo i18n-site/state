@@ -24,5 +24,3 @@ rpl _tmpl $PROJECT
 rpl _Tmpl $PROJECT
 
 git add .
-
-bun i
