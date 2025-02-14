@@ -1,15 +1,15 @@
-> ./Conn.js
+> @8v/mysql
   ./conf/IPV4.js:@ > IPV4_HOST
   ./conf/mysql.js > CONF
   ./raise.js
 
 _ping = (
   hostname
-  [
+  {
     conn
     q
     q1
-  ]
+  }
 )=>
   isReadOnly = =>
     (
@@ -49,7 +49,7 @@ _ping = (
   return is_master
 
 ping = (host)=>
-  conn = await Conn({
+  conn = await mysql({
     host: IPV4[host]
     rowsAsArray: false
     ...CONF
