@@ -3,3 +3,4 @@ node_modules/
 
 /.dev
 /lib/
+/src/_tmpl/deno.lock
