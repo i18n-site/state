@@ -19,8 +19,12 @@ bun x cep -c src/$project -o $lib
 
 cd $lib
 
+DIR_ENV=$DIR/conf/env
+
+cat $DIR_ENV/cf.env $DIR_ENV/state.env >/tmp/env
+
 deployctl deploy --save-config=false --force --prod \
-  --env-file=$DIR/conf/env/state.env
+  --env-file=$DIR/conf/env/cf.env
 
 set +x
 
