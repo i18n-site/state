@@ -1,5 +1,4 @@
 #!/usr/bin/env coffee
 
 export default (c)=>
-  'good'
-
+  throw new Error('pong')
