@@ -21,10 +21,10 @@ cd $lib
 
 DIR_ENV=$DIR/conf/env
 
-cat $DIR_ENV/cf.env $DIR_ENV/state.env >/tmp/env
+cat $DIR_ENV/api.cf.env $DIR_ENV/src.env >/tmp/state.env
 
 deployctl deploy --save-config=false --force --prod \
-  --env-file=$DIR/conf/env/cf.env
+  --env-file=/tmp/state.env
 
 set +x
 
