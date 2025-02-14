@@ -1,4 +1,4 @@
-# @3-/warn
+# @3-/api
 
 cdn 架构设计
 
@@ -9,7 +9,7 @@ cdn 架构设计
 * 刷新 cloudflare 的 cdn
 * 插入到 neon.tech 的postgresql 数据库, 并发送 notify 通知
 
-## ../warn_refresh
+## ../api_refresh
 
 用 postgresql 的 listen refresh_pkg 来监听更新, 刷新 nginx 的 proxy cache
 

@@ -3,7 +3,7 @@
 DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 
-. ../../conf/state/warn/cloudflare.sh
+. ../../conf/state/api/cloudflare.sh
 
 set -ex
 

@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://atomgit.com/i18n/lib.git"
   },
-  "homepage": "https://atomgit.com/i18n/lib/tree/dev/warn",
+  "homepage": "https://atomgit.com/i18n/lib/tree/dev/api",
   "author": "i18n.site@gmail.com",
   "license": "Apache-2.0",
   "exports": {
