@@ -6,7 +6,7 @@
       "dependencies": {
         "@3-/nowts": "^0.1.1",
         "@3-/pg": "^0.1.8",
-        "@8v/heartbeat": "^0.1.20",
+        "@8v/heartbeat": "^0.1.22",
         "@8v/hsec": "^0.1.2",
         "@8v/needwarn": "^0.1.4",
         "@8v/send": "^0.1.9",
@@ -23,7 +23,7 @@
 
     "@8v/curl": ["@8v/curl@0.1.6", "", {}, "sha512-6QGUJGHhh27wXssfBZEvCoX8YUVZOh155NEY282tJ9MGHOEBSppdbpMOGWaVYi1q+Gsi2IolBER6QvBBC21MaQ=="],
 
-    "@8v/heartbeat": ["@8v/heartbeat@0.1.20", "", { "dependencies": { "@8v/hsec": "^0.1.2", "@8v/pg": "^0.1.3", "@8v/send": "^0.1.9" } }, "sha512-iDZLRiU0a8Dgy6qgA9TC31C2rU7xok0SqaAUO8w/w8PFxzAGMAAvd+of/SrOQ7C/U88Noxq8HIQw7v9bYam+kg=="],
+    "@8v/heartbeat": ["@8v/heartbeat@0.1.22", "", { "dependencies": { "@8v/hsec": "^0.1.2", "@8v/pg": "^0.1.3", "@8v/send": "^0.1.9" } }, "sha512-lhzDlfqNORmp4BmKwim0rM6yBvRyJ4tMiApqCq95kytXp2AeHZDF+VoAL+3PgtTosOPlGbCE7vcam+YSQ+4+kg=="],
 
     "@8v/hsec": ["@8v/hsec@0.1.2", "", {}, "sha512-k0pJxhxdl53AjvKGqaGE10YXepxX89SM5HwtwzdqnI6JnjkEaQuy8HaCD0oGTlNwxra+jBNKHyopjxzn7KywNQ=="],
 
