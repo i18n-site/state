@@ -8,5 +8,13 @@
   "deploy": {
     "project": "state-mysql",
     "entrypoint": "main.js"
+  },
+  "lint": {
+    "rules": {
+      "exclude": [
+        "no-slow-types",
+        "no-ex-assign"
+      ]
+    }
   }
 }
