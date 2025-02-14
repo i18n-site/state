@@ -5,6 +5,6 @@ cd $DIR
 
 set -e
 
-. ./conf/env/state.env
+. conf/env/api.cf.env
 
 psql $PG_URL <pg.sql
