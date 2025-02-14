@@ -1,9 +1,19 @@
 {
   "imports": {
-    "postgres": "https://deno.land/x/postgres@v0.19.3/mod.ts"
+    "@8v/cron": "jsr:@8v/cron@^0.1.1",
+    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.26",
+    "@8v/raise": "jsr:@8v/raise@^0.1.4"
   },
   "deploy": {
     "project": "state-warn",
     "entrypoint": "main.js"
+  },
+  "lint": {
+    "rules": {
+      "exclude": [
+        "no-slow-types",
+        "no-ex-assign"
+      ]
+    }
   }
 }
