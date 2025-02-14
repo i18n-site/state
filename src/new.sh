@@ -21,6 +21,6 @@ cp -R _tmpl $PROJECT
 cd $PROJECT
 
 rpl _tmpl $PROJECT
-rpl _Tmpl $PROJECT
+rpl _Tmpl "${PROJECT^}"
 
 git add .

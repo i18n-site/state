@@ -1,5 +1,5 @@
 import raise from "@8v/raise";
 
-class warnError extends Error {}
+class WarnError extends Error {}
 
-export default raise(warnError);
+export default raise(WarnError);
