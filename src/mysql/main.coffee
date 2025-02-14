@@ -2,19 +2,14 @@
 
 > ./conf/mysql.js
   ./Ping.js
-  @8v/heartbeat/wrap.js
+  @8v/heartbeat.js
+  @8v/cron
 
-KIND = 'mysql'
+ping = heartbeat.mysql Ping, 300
 
-ping = wrap 300, KIND, Ping
-
-Deno.cron(
-  KIND
-  "* * * * *"
+cron(
+  "* * * * *" # 定时运行
   =>
     Promise.allSettled Object.entries(mysql).map ping
 )
-
-Deno.serve =>
-  new Response(KIND)
 
