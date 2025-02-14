@@ -1,34 +1,12 @@
-> # ./cron.js
-  # ./initSend.js
-  ./state.js
+> ./state.js
   postgres
   @3-/pg/pgConf.js
-  # @3-/pg/genfunc.js
-  @8v/heartbeat
+  hono > Hono
 
 pgConn = (env)=>postgres(...pgConf(env))
+app = new Hono()
+app.get('/', (c) => c.text('Hello Cloudflare Workers!'))
 
-export default {
-  fetch: (req, env)=>state(
-      req
-      env
-      pgConn(env)
-    )
+export default app
 
-  # scheduled : (event, env, ctx) =>
-  #   initSend(env)
-  #   pg = pgConn(env)
-  #   await heartbeat(
-  #     pg
-  #     600
-  #     'warn'
-  #     'cf'
-  #     cron
-  #     [
-  #       env
-  #       genfunc(pg)
-  #     ]
-  #   )
-  #   return
-}
 

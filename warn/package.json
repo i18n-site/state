@@ -2,6 +2,7 @@
   "version": "0.1.1",
   "devDependencies": {
     "@3-/cf_work_secret": "^0.1.5",
+    "@cloudflare/workers-types": "^4.20250204.0",
     "esbuild": "^0.25.0",
     "wrangler": "^3.109.0"
   },
@@ -22,6 +23,7 @@
   "type": "module",
   "dependencies": {
     "@3-/pg": "^0.1.8",
+    "hono": "^4.7.1",
     "postgres": "^3.4.5"
   }
 }
