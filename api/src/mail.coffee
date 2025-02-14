@@ -8,7 +8,6 @@ export default honotoken ->
     title
     txt
   } = await @req.json()
-  console.log JSON.stringify @env
   await sendmail(
     @env
     title
