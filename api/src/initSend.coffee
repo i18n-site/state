@@ -2,8 +2,6 @@
 
 import { EmailMessage } from 'cloudflare:email'
 
-> @8v/send > lark Push
-
 sendmail = (sender, from_name, from, to, subject, txt) =>
   raw = [
     'MIME-Version: 1.0'
