@@ -2,11 +2,12 @@
   "version": "4",
   "specifiers": {
     "jsr:@8v/curl@~0.1.6": "0.1.6",
-    "jsr:@8v/heartbeat@~0.1.19": "0.1.19",
+    "jsr:@8v/heartbeat@~0.1.20": "0.1.20",
+    "jsr:@8v/hsec@~0.1.2": "0.1.2",
     "jsr:@8v/lark@~0.1.5": "0.1.5",
     "jsr:@8v/pg@~0.1.3": "0.1.3",
     "jsr:@8v/raise@~0.1.4": "0.1.4",
-    "jsr:@8v/send@~0.1.8": "0.1.8",
+    "jsr:@8v/send@~0.1.9": "0.1.9",
     "jsr:@8v/yml@~0.1.3": "0.1.3",
     "jsr:@std/yaml@^1.0.5": "1.0.5",
     "jsr:@y0/postgres@^3.4.5": "3.4.5",
@@ -17,12 +18,16 @@
     "@8v/curl@0.1.6": {
       "integrity": "3a468cbdfb4b0898506012e90ebce7e1c0e7fd39eb09b07ee886dfa2a2f884a5"
     },
-    "@8v/heartbeat@0.1.19": {
-      "integrity": "38b305a7468241c9f9050d073777bd16f37c50defa5e71ad68b9a8415720a70a",
+    "@8v/heartbeat@0.1.20": {
+      "integrity": "274ab93c1bae03cae82644cd007ca947601a15bc91842c509457830c4ca3e23d",
       "dependencies": [
+        "jsr:@8v/hsec",
         "jsr:@8v/pg",
         "jsr:@8v/send"
       ]
+    },
+    "@8v/hsec@0.1.2": {
+      "integrity": "29649526b7f22d1cfedb3f3ebd23653ebb0695299296b0681b61792028ae27ee"
     },
     "@8v/lark@0.1.5": {
       "integrity": "c76c3c775a58e22c221d2dd1eac3447b8203075c8a821c6b0e0186885ae854b8",
@@ -43,8 +48,8 @@
         "jsr:@8v/yml"
       ]
     },
-    "@8v/send@0.1.8": {
-      "integrity": "a0647822c8f703e70e106b9fdfc7f91ea65ac2a2330f358bfb7e58b844510758",
+    "@8v/send@0.1.9": {
+      "integrity": "7a5487e5f3275a3d335b24822c17b9a29da5e65f09b8fae676d1ccad80ce6d8c",
       "dependencies": [
         "jsr:@8v/lark"
       ]
@@ -128,10 +133,10 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@8v/heartbeat@~0.1.19",
+      "jsr:@8v/heartbeat@~0.1.20",
       "jsr:@8v/pg@~0.1.3",
       "jsr:@8v/raise@~0.1.4",
-      "jsr:@8v/send@~0.1.8",
+      "jsr:@8v/send@~0.1.9",
       "npm:mysql2@^3.12.0"
     ]
   }
