@@ -11,8 +11,16 @@ do =>
   for [path, func] from Object.entries({
     ping
   })
-    console.log path
-    app.get('/'+path, func)
+    app.get(
+      '/'+path,
+      (c)=>
+        r = await func(c)
+        if r
+          if r.constructor == String
+            return c.text(r)
+          return r
+        return c.text('')
+    )
   return
 
 
