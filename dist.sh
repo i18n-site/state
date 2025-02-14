@@ -11,6 +11,12 @@ mise trust
 
 # mise exec -- ./gen.coffee
 
+cd src/$project
+deno fmt
+deno lint
+
+cd $DIR
+
 rm -rf lib
 
 lib=lib/$project

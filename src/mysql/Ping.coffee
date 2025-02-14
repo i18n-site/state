@@ -49,16 +49,18 @@ _ping = (
   return is_master
 
 ping = (host)=>
-  conn = await mysql({
+  {
+    conn
+  } = mysql = await mysql({
     host: IPV4[host]
     rowsAsArray: false
     ...CONF
   })
 
   try
-    return await _ping(host, conn)
+    return await _ping(host, mysql)
   finally
-    conn[0].close()
+    conn.close()
   return
 
 export default (host_li)=>
