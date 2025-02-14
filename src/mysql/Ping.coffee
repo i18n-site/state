@@ -51,14 +51,14 @@ _ping = (
 ping = (host)=>
   {
     conn
-  } = mysql = await mysql({
+  } = db = await mysql({
     host: IPV4[host]
     rowsAsArray: false
     ...CONF
   })
 
   try
-    return await _ping(host, mysql)
+    return await _ping(host, db)
   finally
     conn.close()
   return

@@ -7,7 +7,7 @@
     "jsr:@8v/heartbeat@~0.1.26": "0.1.26",
     "jsr:@8v/hsec@~0.1.2": "0.1.2",
     "jsr:@8v/lark@~0.1.5": "0.1.5",
-    "jsr:@8v/mysql@~0.1.3": "0.1.3",
+    "jsr:@8v/mysql@~0.1.5": "0.1.5",
     "jsr:@8v/pg@~0.1.3": "0.1.3",
     "jsr:@8v/raise@~0.1.4": "0.1.4",
     "jsr:@8v/send@~0.1.10": "0.1.10",
@@ -47,8 +47,8 @@
         "jsr:@8v/curl"
       ]
     },
-    "@8v/mysql@0.1.3": {
-      "integrity": "e8799e16efb20dc386e47eaf6ff13f25c88a796e6179afb1a677d488f39a55bf",
+    "@8v/mysql@0.1.5": {
+      "integrity": "64418197ff0b44dd3e6b230bccbb359ad845407dd7981af7e73f758b5cf60901",
       "dependencies": [
         "npm:mysql2"
       ]
@@ -154,9 +154,8 @@
     "dependencies": [
       "jsr:@8v/cron@~0.1.1",
       "jsr:@8v/heartbeat@~0.1.26",
-      "jsr:@8v/mysql@~0.1.3",
-      "jsr:@8v/raise@~0.1.4",
-      "npm:mysql2@^3.12.0"
+      "jsr:@8v/mysql@~0.1.5",
+      "jsr:@8v/raise@~0.1.4"
     ]
   }
 }

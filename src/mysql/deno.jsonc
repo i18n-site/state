@@ -2,7 +2,7 @@
   "imports": {
     "@8v/cron": "jsr:@8v/cron@^0.1.1",
     "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.26",
-    "@8v/mysql": "jsr:@8v/mysql@^0.1.3",
+    "@8v/mysql": "jsr:@8v/mysql@^0.1.5",
     "@8v/raise": "jsr:@8v/raise@^0.1.4"
   },
   "deploy": {
