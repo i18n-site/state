@@ -13,6 +13,6 @@ fi
 cd src
 fd deno.jsonc -x bash -c 'DIR=$(dirname "{}") && echo -e $DIR && cd $DIR && deno outdated --update --latest && molt --no-lock --commit'
 
-cd ../warn
+cd ../api
 ncu -u
 bun i
