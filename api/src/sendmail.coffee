@@ -18,22 +18,22 @@ sendmail = (sender, from_name, from, to, subject, txt) =>
   )
   sender.send(message)
 
-sendbind = ({
-  MAIL
-  NAME
-  MAIL_FROM
-  MAIL_TO
-}) => (title, msg, url) =>
+export default (
+  {
+    MAIL
+    NAME
+    MAIL_FROM
+    MAIL_TO
+  }
+  title
+  txt
+) =>
   sendmail(
     MAIL
     NAME
     MAIL_FROM
     MAIL_TO
     title
-    msg + if url then ('\n' + url) else ''
+    txt
   )
 
-export default (env)=>
-  lark(env.LARKBOT)
-  Push.mail(sendbind)(env)
-  return
