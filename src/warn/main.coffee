@@ -1,12 +1,12 @@
 #!/usr/bin/env coffee
 
-> ./conf/warn.js
-  ./Ping.js
+> ./Ping.js
   @8v/heartbeat
   @8v/cron
 
 KIND = 'warn'
 
+# await Ping()
 
 cron(
   KIND

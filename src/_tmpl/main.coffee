@@ -9,10 +9,15 @@ KIND = '_tmpl'
 
 ping = heartbeat KIND, Ping, 300
 
+run = =>
+  Promise.allSettled Object.entries(_tmpl).map ping
+
+# for dev test
+# await run()
+
 cron(
   KIND
   "* * * * *" # 定时运行
-  =>
-    Promise.allSettled Object.entries(_tmpl).map ping
+  run
 )
 
