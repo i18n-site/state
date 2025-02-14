@@ -19,6 +19,9 @@
     "@3-/write": "^0.0.2",
     "coffeescript": "^2.7.0",
     "concurrently": "^9.1.2",
-    "nodemon": "^3.1.9"
+    "envfile": "^7.1.0",
+    "nodemon": "^3.1.9",
+    "@3-/envexpand": "^0.1.1",
+    "zx": "^8.3.2"
   }
 }
