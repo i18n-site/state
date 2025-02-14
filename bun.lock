@@ -3,7 +3,6 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@3-/envexpand": "^0.1.1",
         "@3-/nowts": "^0.1.1",
         "@3-/retry": "^0.0.2",
         "@8v/heartbeat": "^0.1.23",
@@ -18,12 +17,11 @@
       },
       "devDependencies": {
         "@3-/coffee_plus": "^0.1.26",
+        "@3-/envexpand": "^0.1.3",
         "@3-/loader": "^0.0.2",
         "@3-/write": "^0.0.2",
         "coffeescript": "^2.7.0",
         "concurrently": "^9.1.2",
-        "dotenv": "^16.4.7",
-        "dotenv-expand": "^12.0.1",
         "envfile": "^7.1.0",
         "nodemon": "^3.1.9",
         "zx": "^8.3.2",
@@ -39,7 +37,7 @@
 
     "@3-/debounce": ["@3-/debounce@0.1.2", "", {}, "sha512-mmfCh8nvLFRK3p2WwjMDWsA2WwHiN6ujdNNkjgoD7ufLIv8f6oJfOwajenBQOPfmzBfAp8hFfpiQYemcwDXxLQ=="],
 
-    "@3-/envexpand": ["@3-/envexpand@0.1.1", "", { "bin": { "envexpand": "lib.js" } }, "sha512-LatgQwyqcyH+uGA9dxeiuQg6Kg3p65UqFBi3Q+Ewb9u4fMTYemM2O7U5SXnZhq8fQ/kO4vRE+nVL3S5Zv29vRg=="],
+    "@3-/envexpand": ["@3-/envexpand@0.1.3", "", { "dependencies": { "@3-/read": "^0.1.4", "dotenv": "^16.4.7", "dotenv-expand": "^12.0.1", "envfile": "^7.1.0" }, "bin": { "envexpand": "lib.js" } }, "sha512-TlpelBEs165rPQsl3OIRaxLKmN0+AU5tAidGz5qkBxrbxPflQQ1nZYavkOFmUHDXAaf+QyI4fyg0+7rlv52xOw=="],
 
     "@3-/jsext": ["@3-/jsext@0.0.7", "", {}, "sha512-rfwPOOyYRxFvObNS2ZRxjILLo3J79OaIXefxaZFt1wFmvw9LVOpVgVV7RKPgD4zXoJfmzz/Pr8+NMlnlrHfMIg=="],
 

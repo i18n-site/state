@@ -21,7 +21,7 @@ cd $lib
 
 DIR_ENV=$DIR/conf/env
 
-cat $DIR_ENV/api.cf.env $DIR_ENV/src.env >/tmp/state.env
+bun x envexpand $DIR_ENV/api.cf.env $DIR_ENV/src.env >/tmp/state.env
 
 deployctl deploy \
   --save-config=false \

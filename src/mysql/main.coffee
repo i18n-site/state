@@ -16,5 +16,5 @@ Deno.cron(
 )
 
 Deno.serve =>
-  new Response(KIND+' '+process.env.ApiMail)
+  new Response(KIND)
 
