@@ -18,9 +18,7 @@ do =>
           r = await func(c)
         catch err
           c.status(500)
-          if err instanceof Error
-            return c.text(err)
-          return err
+          r = err
         if r
           if r.constructor == String
             return c.text(r)
