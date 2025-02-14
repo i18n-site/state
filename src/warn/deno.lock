@@ -7,12 +7,14 @@
     "jsr:@8v/heartbeat@~0.1.26": "0.1.26",
     "jsr:@8v/hsec@~0.1.2": "0.1.2",
     "jsr:@8v/lark@~0.1.5": "0.1.5",
+    "jsr:@8v/needwarn@~0.1.4": "0.1.4",
     "jsr:@8v/pg@~0.1.3": "0.1.3",
     "jsr:@8v/raise@~0.1.4": "0.1.4",
     "jsr:@8v/send@~0.1.10": "0.1.10",
     "jsr:@8v/yml@~0.1.3": "0.1.3",
     "jsr:@std/yaml@^1.0.5": "1.0.5",
     "jsr:@y0/postgres@^3.4.5": "3.4.5",
+    "npm:@3-/nowts@~0.1.1": "0.1.1",
     "npm:ansis@^3.12.0": "3.14.0"
   },
   "jsr": {
@@ -44,6 +46,9 @@
       "dependencies": [
         "jsr:@8v/curl"
       ]
+    },
+    "@8v/needwarn@0.1.4": {
+      "integrity": "c42037b676f38af40c6cc7e3d4f617c45c34330477844eb14cc575a616e1fd49"
     },
     "@8v/pg@0.1.3": {
       "integrity": "260e538204996423fb346ddf553abc13d07f14f50b81f864df71f495e983b1c9",
@@ -79,6 +84,9 @@
     }
   },
   "npm": {
+    "@3-/nowts@0.1.1": {
+      "integrity": "sha512-Gbmj0YyqEMZBuEEeAwEQcJnf4RGcBp5FRCavfMZevgbmh5IQqkRS7IrGGwjaernI2PBFgDpaSYSS3E4Uk2whqA=="
+    },
     "ansis@3.14.0": {
       "integrity": "sha512-R1LnSpYZWMDEFoAyCrfgToVz4ES25luDpjlZsUlD5GXdPWb91U+TZGkxWAOvt+7zWRY/ctOxhtTx5HUtL3qmbA=="
     }
@@ -87,7 +95,12 @@
     "dependencies": [
       "jsr:@8v/cron@~0.1.1",
       "jsr:@8v/heartbeat@~0.1.26",
-      "jsr:@8v/raise@~0.1.4"
+      "jsr:@8v/hsec@~0.1.2",
+      "jsr:@8v/needwarn@~0.1.4",
+      "jsr:@8v/pg@~0.1.3",
+      "jsr:@8v/raise@~0.1.4",
+      "jsr:@8v/send@~0.1.10",
+      "npm:@3-/nowts@~0.1.1"
     ]
   }
 }

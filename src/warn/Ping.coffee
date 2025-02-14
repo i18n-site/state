@@ -1,84 +1,52 @@
-> ./Conn.js
-  ./raise.js
+> @3-/nowts
+  @8v/needwarn
+  @8v/hsec
+  @8v/send
+  @8v/pg > LI EXE UNSAFE
 
-_ping = (
-  hostname
+export default (env)=>
+  now = nowts()
+
   [
-    conn
-    q
-    q1
+    err_li
+    expire_li
+    # recover_li
+  ] = await Promise.all [
+    LI"SELECT id,kind,name,warn,ts,state FROM state.heartbeat WHERE err=true AND ts_next>=#{now}"
+    LI"SELECT id,kind,name,warn,ts_next FROM state.heartbeat WHERE ts_next<#{now}"
+    # LI"SELECT * FROM fn.heartbeatRecover()"
   ]
-)=>
-  isReadOnly = =>
-    (
-      await q1 'SELECT @@read_only'
-    )['@@read_only']
+  warn_incr_id_li = []
+  ing = []
 
-  read_only = await isReadOnly()
-  slave_state = await q1('SHOW SLAVE STATUS')
+  # console.log JSON.stringify {err_li, expire_li, recover_li},null,2
+  sendwarn = (type,li)=>
+    for [id,kind,name,warn,ts,state] in li
+      diff = now - ts
+      # console.log(diff, warn,needwarn(diff, warn))
+      if needwarn(diff, warn)
+        warn_incr_id_li.push id
+        msg = '第'+(1+warn)+'次报警\n故障持续 '+hsec(diff)
+        if state
+          msg += '\n'+state
+        ing.push send(
+          '❌ ' + kind + ' ' + name + ' ' + type
+          msg
+        )
+    return
 
-  if slave_state # slave
-    is_master = 0
-    if not read_only
-      await q('SET GLOBAL read_only=1')
-      if not await isReadOnly()
-        raise 'slave not read-only'
+  sendwarn('出错了', err_li)
+  sendwarn('监控挂了', expire_li)
 
-    {
-      Slave_IO_Running
-      Slave_SQL_Running
-      Last_Error
-    } = slave_state
-
-    if not (
-      Slave_IO_Running == 'Yes' and Slave_SQL_Running == 'Yes'
+  if warn_incr_id_li.length
+    ing.push UNSAFE(
+      "UPDATE state.heartbeat SET warn=warn+1 WHERE err=true AND id IN (#{warn_incr_id_li.join(',')})"
     )
-      raise {
-        Last_Error
-        Slave_IO_Running
-        Slave_SQL_Running
-      }
-  else
-    is_master = 1
-    if read_only
-      await q('SET GLOBAL read_only=0')
-      if await isReadOnly()
-        raise 'master is read-only'
-  return is_master
 
-ping = (host)=>
-  conn = await Conn({
-    host: IPV4[host]
-    rowsAsArray: false
-    ...CONF
-  })
+  # for [id,kind,name,warn] in recover_li
+  #   ing.push send('✅ ' + kind + ' ' + name, '持续时间 '+hsec(warn))
 
-  try
-    return await _ping(host, conn)
-  finally
-    conn[0].close()
-  return
-
-export default (host_li)=>
-  master_li = []
-  slave_li = []
-  err_li = []
-  for i, pos in await Promise.allSettled host_li.map(ping)
-    host = host_li[pos]
+  for i from await Promise.allSettled ing
     if i.reason
-      err_li.push host + ': ' + i.reason?.message+'\n'
-    else if i.value
-      master_li.push host
-    else
-      slave_li.push host
-
-  { length } = master_li
-  if length != 1
-    err = "#{length} master"
-    if length
-      err += ':' + master_li.join(' , ')
-    err_li.push err
-  raise err_li
-  slave_li.sort()
-  return [master_li[0],slave_li]
-
+      throw i.reason
+  return
