@@ -2,5 +2,9 @@
 > @8v/honotoken
 
 export default honotoken ->
-  console.log 'param', @req.param('token'), @env.API_TOKEN
+  {
+    title
+    txt
+  } = await @req.json()
+  console.log '>>>', title, txt
   return '2'

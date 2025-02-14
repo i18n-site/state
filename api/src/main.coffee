@@ -9,8 +9,9 @@ app = new Hono()
 honobind(app).get({
   '':state
   ping
+}).post(
   'mail/:token':mail
-})
+)
 
 export default app
 
