@@ -5,4 +5,4 @@ cd $DIR
 
 set -ex
 
-flyctl secrets set $(cat ../conf/rust/*.env | grep -v "^#" | tr '\n' ' ')
+exec bash -c "flyctl secrets set $(cat ../conf/rust/*.env | grep -v "^#" | tr '\n' ' ')"
