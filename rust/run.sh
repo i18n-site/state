@@ -6,11 +6,13 @@ cd $DIR
 set -e
 . .project.sh
 
-set +a
 for f in ../conf/rust/*.env; do
+  set -a
   . $f
+  set +a
 done
-set -a
 
 set -x
+
+echo $SMTP_HOST_LI
 exec ./.run.sh $project
