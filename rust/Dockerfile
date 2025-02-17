@@ -63,6 +63,5 @@ COPY --from=build /so/ lib/
 WORKDIR /
 COPY --from=build /etc/ssl/certs /etc/ssl/certs
 COPY --from=build /app/m .
-# ADD tmp/conf conf
 
-ENTRYPOINT [ "/m","-c","/conf", "--port","5123" ]
+ENTRYPOINT ["/m","--port","5123"]
