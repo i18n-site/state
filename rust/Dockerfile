@@ -28,31 +28,24 @@ source $CARGO_HOME/env &&\
 rustup toolchain install nightly --profile minimal
 
 
-ADD ./sh/cpso.sh .
-ADD srv .
-# ADD Cargo.toml .
-# ADD alive alive
-# ADD alive_alter alive_alter
-# ADD alive_api alive_api
-# ADD alive_plugin alive_plugin
-# ADD alive_watch alive_watch
-# ADD alter alter
-# ADD srv srv
-# ADD watch watch
+COPY sh/cpso.sh .
+COPY srv/ srv/
+COPY smtptls/ smtptls/
+COPY Cargo.toml .
 
-
-RUN \
-source $CARGO_HOME/env &&\
-mkdir -p out &&\
-TARGET=$(rustc -vV | sed -n 's|host: ||p') &&\
-export RUSTFLAGS="-Z linker-features=-lld --cfg reqwest_unstable -Ctarget-feature=+crt-static $RUSTFLAGS" &&\
+RUN <<EOT bash
+set -ex
+. $CARGO_HOME/env 
+export RUSTFLAGS="-Z linker-features=-lld --cfg reqwest_unstable -Ctarget-feature=+crt-static $RUSTFLAGS" 
 cargo build \
   --release -p srv \
   --artifact-dir out \
   -Z unstable-options \
-  --target=$TARGET &&\
-mv out/* m &&\
+  --target=\$(rustc -vV | sed -n 's|host: ||p') 
+mv out/* m 
 ./cpso.sh m
+EOT
+
 
 # FROM ubuntu
 FROM scratch
