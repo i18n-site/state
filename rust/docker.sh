@@ -4,6 +4,4 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-cat ../conf/rust/*.env >.env
-
 docker compose up
