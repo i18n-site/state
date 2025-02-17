@@ -4,11 +4,11 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+smtp = { version = "0.1.0", path = "../smtp" }
 aok = "0.1.17"
 axum = { version = "0.8.1", features = ["tracing", "macros"] }
 genv = "0.1.15"
 loginit = "0.1.18"
-smtp = { version = "0.1.0", path = "../smtp" }
 tokio = { version = "1.43.0", features = [
   "macros",
   "rt",
