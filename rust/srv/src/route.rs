@@ -1,4 +1,5 @@
 use axum::{Router, routing::get};
+use smtp::smtp;
 
 use crate::url;
 
@@ -10,7 +11,7 @@ pub fn route(mut router: Router) -> Router {
   }
 
   get!("", url::index::get);
-  get!("smtp", smtp::smtp);
+  // get!("smtp", smtp::smtp);
 
   return router;
 }

@@ -1,6 +1,11 @@
+use aok::{OK, Void};
+
 genv::s!(SMTP_HOST_LI);
 
-pub fn smtp() {}
+pub fn smtp() -> Void {
+  OK
+}
+
 // use aok::{OK, Result, Void};
 // use axum::{Router, extract::State, http::StatusCode, response::IntoResponse, routing::get};
 // use shuttle_runtime::{__internals::Context, SecretStore};
