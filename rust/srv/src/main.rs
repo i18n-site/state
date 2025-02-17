@@ -1,5 +1,5 @@
 use aok::{OK, Void};
-
+mod cron;
 mod route;
 mod url;
 use route::route;
@@ -28,5 +28,8 @@ genv::def!(PORT:u16 | 5123);
 async fn main() -> Void {
   loginit::init();
   xboot::init().await?;
+
+  tokio::spawn(cron::cron());
+
   run(PORT()).await
 }
