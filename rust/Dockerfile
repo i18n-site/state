@@ -29,8 +29,8 @@ rustup toolchain install nightly --profile minimal
 
 
 ADD ./sh/cpso.sh .
-# ADD Cargo.toml .
 ADD srv .
+# ADD Cargo.toml .
 # ADD alive alive
 # ADD alive_alter alive_alter
 # ADD alive_api alive_api
