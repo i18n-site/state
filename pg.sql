@@ -22,10 +22,11 @@ CREATE OR REPLACE FUNCTION fn.heartbeat(_kind VARCHAR(255),_name VARCHAR(255),_d
 DECLARE 
   _ts BIGINT:=EXTRACT(EPOCH FROM NOW())::BIGINT;
   _pre_ts BIGINT;
+  _pre_ts_next BIGINT;
   _id BIGINT;
   _err BOOLEAN;
 BEGIN
-  SELECT id,err,ts INTO _id,_err,_pre_ts FROM state.heartbeat WHERE name=_name AND kind=_kind;
+  SELECT id,err,ts,ts_next INTO _id,_err,_pre_ts,_pre_ts_next FROM state.heartbeat WHERE name=_name AND kind=_kind;
   IF _id IS NULL THEN
     INSERT INTO state.heartbeat(kind,name,ts,ts_next,state)VALUES(_kind,_name,_ts,_ts+_duration,_state);
   ELSE
@@ -34,6 +35,9 @@ BEGIN
       RETURN _ts-_pre_ts;
     ELSE
       UPDATE state.heartbeat SET ts=_ts,ts_next=_ts+_duration,state=_state WHERE id=_id;
+      IF _ts > _pre_ts_next THEN
+        RETURN _ts-_pre_ts;
+      END IF;
     END IF;
   END IF;
   RETURN 0;
