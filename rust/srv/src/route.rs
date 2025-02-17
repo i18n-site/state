@@ -1,13 +1,12 @@
-use aok::OK;
-use axum::{Router, response::IntoResponse, routing::get};
+use axum::{Router, http::StatusCode, response::IntoResponse, routing::get};
 
 use crate::url;
 
 #[axum::debug_handler]
 pub async fn smtptls() -> Result<impl IntoResponse, impl IntoResponse> {
   match smtptls::smtptls().await {
-    Ok(_) => OK,
-    Err(e) => Err((axum::http::StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
+    Ok(_) => Ok(()),
+    Err(e) => Err((StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
   }
 }
 
@@ -19,7 +18,7 @@ pub fn route(mut router: Router) -> Router {
   }
 
   get!("", url::index::get);
-  get!("smtptls", smtptls::smtptls);
+  get!("smtptls", smtptls);
 
   return router;
 }

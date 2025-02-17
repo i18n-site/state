@@ -725,7 +725,6 @@ name = "smtptls"
 version = "0.1.0"
 dependencies = [
  "aok",
- "axum",
  "genv",
 ]
 
