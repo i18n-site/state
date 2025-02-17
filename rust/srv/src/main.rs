@@ -17,7 +17,7 @@ pub async fn run(port: u16) -> Void {
   if let Ok(tcp) =
     xerr::ok!(TcpListener::bind(SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), port)).await)
   {
-    axum::serve(tcp, route(router)).await?;
+    axum::serve(tcp, axum_layer::layer(route(router))).await?;
   }
   OK
 }
