@@ -48,7 +48,7 @@ TARGET=$(rustc -vV | sed -n 's|host: ||p') &&\
 export RUSTFLAGS="-Z linker-features=-lld --cfg reqwest_unstable -Ctarget-feature=+crt-static $RUSTFLAGS" &&\
 cargo build \
   --release -p srv \
-  --out-dir out \
+  --artifact-dir out \
   -Z unstable-options \
   --target=$TARGET &&\
 mv out/* m &&\
