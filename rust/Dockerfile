@@ -1,4 +1,4 @@
-FROM ubuntu as build
+FROM ubuntu AS build
 
 WORKDIR /app
 
