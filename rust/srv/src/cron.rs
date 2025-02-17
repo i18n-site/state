@@ -5,5 +5,4 @@ pub async fn cron() -> Void {
     println!("cron");
     tokio::time::sleep(std::time::Duration::from_secs(60)).await;
   }
-  OK
 }
