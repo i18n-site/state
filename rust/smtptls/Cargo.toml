@@ -1,0 +1,9 @@
+[package]
+name = "smtptls"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aok = "0.1.17"
+axum = "0.8.1"
+genv = "0.1.15"
