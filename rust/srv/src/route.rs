@@ -1,4 +1,4 @@
-use axum::{Router, http::StatusCode, response::IntoResponse, routing::get};
+use axum::{Router, routing::get};
 
 use crate::url;
 
@@ -20,5 +20,5 @@ pub fn route(mut router: Router) -> Router {
   get!("", url::index::get);
   // get!("smtptls", smtptls);
 
-  return router;
+  router
 }

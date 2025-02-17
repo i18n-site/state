@@ -1,4 +1,4 @@
-use aok::{OK, Void};
+use aok::Void;
 
 pub async fn cron() -> Void {
   loop {
