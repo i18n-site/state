@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+smtp = { version = "0.1.0", path = "../smtp" }
 aok = "0.1.17"
 axum = { version = "0.8.1", features = ["tracing", "macros"] }
 genv = "0.1.15"
