@@ -8,4 +8,12 @@ set -e
 . .project.sh
 set -x
 
+set +a
+
+for f in ../conf/rust/*.env; do
+  . $f
+done
+
+set -a
+
 exec ./.run.sh $project

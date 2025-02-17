@@ -1,5 +1,5 @@
 [workspace]
-members = [ "main","smtp"]
+members = ["srv", "smtp"]
 resolver = "2"
 
 [profile.release]
