@@ -35,6 +35,7 @@ BEGIN
       RETURN _ts-_pre_ts;
     ELSE
       UPDATE state.heartbeat SET ts=_ts,ts_next=_ts+_duration,state=_state WHERE id=_id;
+      -- 超时
       IF _ts > _pre_ts_next THEN
         RETURN _ts-_pre_ts;
       END IF;
