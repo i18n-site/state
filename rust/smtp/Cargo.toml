@@ -1,0 +1,18 @@
+[package]
+name = "smtp"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aok = "0.1.17"
+axum = "0.8.1"
+shuttle-axum = "0.52.0"
+shuttle-runtime = "0.52.0"
+sonic-rs = "0.3.17"
+thiserror = "2.0.11"
+tokio = { version = "1.43.0", features = ["rt", "time"] }
+tokio-postgres = "0.7.13"
+
+[dependencies.mail-send]
+version = "0.5.0"
+package = "mail-send-fork"

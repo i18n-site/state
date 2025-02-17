@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title 状态监控
+    meta(content="width=device-width,initial-scale=1" name="viewport")
+    link(href="//cdn.jsdelivr.net/npm/fc3@0.1.14/_.css" rel="stylesheet")
+    link(href="//cdn.jsdelivr.net/npm/@3-/web@0.1.18/_.css" rel="stylesheet")
+
+    script(type="importmap").
+      {
+        "imports": {
+          "-/": "//cdn.jsdelivr.net/npm/@3-/web@0.1.18/"
+        }
+      }
+    //- script(type="module").
+    //-   (await import("-/srv.js")).default("#{__SRV__}")
+    block head
+  body
+    block body
