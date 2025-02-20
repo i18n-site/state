@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@3-/minhtm": "^0.1.3",
+    "@3-/pug": "^0.1.11",
+    "@antfu/ni": "^23.3.1",
+    "serve": "^14.2.4"
+  },
+  "scripts": {
+    "build": "rm -rf htm && pug -c src -o htm && cp -R public/* htm/",
+    "serve": "serve htm",
+    "dist": "nr build && cd htm && minhtm"
+  }
+}

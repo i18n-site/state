@@ -1,0 +1,149 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@8v/apimail@~0.1.3": "0.1.3",
+    "jsr:@8v/cron@~0.1.1": "0.1.1",
+    "jsr:@8v/curl@~0.1.6": "0.1.6",
+    "jsr:@8v/heartbeat@~0.1.35": "0.1.35",
+    "jsr:@8v/hsec@~0.1.2": "0.1.2",
+    "jsr:@8v/kind-name@~0.1.2": "0.1.2",
+    "jsr:@8v/lark@~0.1.5": "0.1.5",
+    "jsr:@8v/lark@~0.1.6": "0.1.6",
+    "jsr:@8v/needwarn@~0.1.4": "0.1.4",
+    "jsr:@8v/notify@~0.1.3": "0.1.3",
+    "jsr:@8v/pg@~0.1.3": "0.1.3",
+    "jsr:@8v/raise@~0.1.4": "0.1.4",
+    "jsr:@8v/send@~0.1.12": "0.1.15",
+    "jsr:@8v/send@~0.1.15": "0.1.15",
+    "jsr:@8v/wxpush@~0.1.3": "0.1.3",
+    "jsr:@8v/yml@~0.1.3": "0.1.3",
+    "jsr:@std/yaml@^1.0.5": "1.0.5",
+    "jsr:@y0/postgres@^3.4.5": "3.4.5",
+    "npm:@3-/nowts@~0.1.1": "0.1.1",
+    "npm:ansis@^3.12.0": "3.14.0"
+  },
+  "jsr": {
+    "@8v/apimail@0.1.3": {
+      "integrity": "651ec467b648dd31b9c1375b2b7b356327b047aad3e8bc645c94ddf48c612df9",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
+    "@8v/cron@0.1.1": {
+      "integrity": "efb595ec068fafe1094345e2b59be3e71740c0426b1fb9c8b79089dc51efe3f3"
+    },
+    "@8v/curl@0.1.6": {
+      "integrity": "3a468cbdfb4b0898506012e90ebce7e1c0e7fd39eb09b07ee886dfa2a2f884a5"
+    },
+    "@8v/heartbeat@0.1.35": {
+      "integrity": "0e044f8a680755700d28a7caaa14ad5190d67b2939d11ea9a3ff5e8de62ca5e1",
+      "dependencies": [
+        "jsr:@8v/hsec",
+        "jsr:@8v/kind-name",
+        "jsr:@8v/notify",
+        "jsr:@8v/pg"
+      ]
+    },
+    "@8v/hsec@0.1.2": {
+      "integrity": "29649526b7f22d1cfedb3f3ebd23653ebb0695299296b0681b61792028ae27ee"
+    },
+    "@8v/kind-name@0.1.2": {
+      "integrity": "d84d4e2123bb02c5d4e3892d323b561b33765ba5804683a5a4c32fd1ec7374a1"
+    },
+    "@8v/lark@0.1.5": {
+      "integrity": "c76c3c775a58e22c221d2dd1eac3447b8203075c8a821c6b0e0186885ae854b8",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
+    "@8v/lark@0.1.6": {
+      "integrity": "156a1b0b31f09225b898986c087fd8b8843eacf05bad54ed6b94b83963b11485",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
+    "@8v/needwarn@0.1.4": {
+      "integrity": "c42037b676f38af40c6cc7e3d4f617c45c34330477844eb14cc575a616e1fd49"
+    },
+    "@8v/notify@0.1.3": {
+      "integrity": "8095f470e4bddacd1b142043ef09465f0298b42925775be29fb0797eface3ec7",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
+    "@8v/pg@0.1.3": {
+      "integrity": "260e538204996423fb346ddf553abc13d07f14f50b81f864df71f495e983b1c9",
+      "dependencies": [
+        "jsr:@y0/postgres",
+        "npm:ansis"
+      ]
+    },
+    "@8v/raise@0.1.4": {
+      "integrity": "fe4605293c4c16c3eb4f816b7025eac43c8a0c4045c2404f4e3f34edb109b1e3",
+      "dependencies": [
+        "jsr:@8v/yml"
+      ]
+    },
+    "@8v/send@0.1.10": {
+      "integrity": "79f046bcb33cd3ea43cb89d0205124bc02ab3d477bdde7512aa3d8038e84796a",
+      "dependencies": [
+        "jsr:@8v/apimail",
+        "jsr:@8v/lark@~0.1.5"
+      ]
+    },
+    "@8v/send@0.1.12": {
+      "integrity": "95fef6d791481f7406663e1b938ee7b9f4bb2ae20e9d3802858c1266b369e189",
+      "dependencies": [
+        "jsr:@8v/apimail",
+        "jsr:@8v/lark@~0.1.6",
+        "jsr:@8v/wxpush"
+      ]
+    },
+    "@8v/send@0.1.15": {
+      "integrity": "d1d74ba1cbf03c349356a1c75ce4873bd6052e54305d644acd1947ef3dc78e99",
+      "dependencies": [
+        "jsr:@8v/lark@~0.1.6",
+        "jsr:@8v/wxpush"
+      ]
+    },
+    "@8v/wxpush@0.1.3": {
+      "integrity": "dd5aa6f2a4091d16661ee7893d4b1f446d5eb264a9f34f9b57ff97bd4c89ef9a",
+      "dependencies": [
+        "jsr:@8v/curl"
+      ]
+    },
+    "@8v/yml@0.1.3": {
+      "integrity": "aa56000e45ceeba8d04fb10a3317e6d745fe7f024100d397fc13d171ce6a6c4d",
+      "dependencies": [
+        "jsr:@std/yaml"
+      ]
+    },
+    "@std/yaml@1.0.5": {
+      "integrity": "71ba3d334305ee2149391931508b2c293a8490f94a337eef3a09cade1a2a2742"
+    },
+    "@y0/postgres@3.4.5": {
+      "integrity": "f492bde63a811acc0caac0c9294a329472a8b38834660287ffac20a29f02774b"
+    }
+  },
+  "npm": {
+    "@3-/nowts@0.1.1": {
+      "integrity": "sha512-Gbmj0YyqEMZBuEEeAwEQcJnf4RGcBp5FRCavfMZevgbmh5IQqkRS7IrGGwjaernI2PBFgDpaSYSS3E4Uk2whqA=="
+    },
+    "ansis@3.14.0": {
+      "integrity": "sha512-R1LnSpYZWMDEFoAyCrfgToVz4ES25luDpjlZsUlD5GXdPWb91U+TZGkxWAOvt+7zWRY/ctOxhtTx5HUtL3qmbA=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@8v/cron@~0.1.1",
+      "jsr:@8v/heartbeat@~0.1.35",
+      "jsr:@8v/hsec@~0.1.2",
+      "jsr:@8v/kind-name@~0.1.2",
+      "jsr:@8v/needwarn@~0.1.4",
+      "jsr:@8v/pg@~0.1.3",
+      "jsr:@8v/raise@~0.1.4",
+      "jsr:@8v/send@~0.1.15",
+      "npm:@3-/nowts@~0.1.1"
+    ]
+  }
+}
