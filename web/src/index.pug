@@ -1,0 +1,11 @@
+extends ./_.pug
+
+block head
+  script(type="module").
+    import "-/com/state.js";
+
+block body
+  b(
+    style="width: 100%; height: 100vh; display: flex; padding: 20px; box-sizing: border-box; align-items: center"
+  )
+    i-state(_="//api.u-01.eu.org")

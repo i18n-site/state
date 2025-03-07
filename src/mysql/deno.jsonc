@@ -1,0 +1,21 @@
+{
+  "imports": {
+    "@8v/cron": "jsr:@8v/cron@^0.1.1",
+    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.35",
+    "@8v/mysql": "jsr:@8v/mysql@^0.1.11",
+    "@8v/raise": "jsr:@8v/raise@^0.1.4",
+    "@8v/retry": "jsr:@8v/retry@^0.1.4"
+  },
+  "deploy": {
+    "project": "state-mysql",
+    "entrypoint": "main.js"
+  },
+  "lint": {
+    "rules": {
+      "exclude": [
+        "no-slow-types",
+        "no-ex-assign"
+      ]
+    }
+  }
+}

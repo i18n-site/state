@@ -1,0 +1,16 @@
+[package]
+name = "smtp"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aok = "0.1.17"
+genv = "0.1.16"
+host_ip = { version = "0.1.0", path = "../host_ip" }
+pg_ = { version = "0.1.1", path = "../pg_", features = ["heartbeat"] }
+smtptls = "0.1.2"
+static_init = "1.0.3"
+tracing = "0.1.41"
+
+[package.metadata.cargo-machete]
+ignored = ["static_init"]

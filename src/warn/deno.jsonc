@@ -1,0 +1,25 @@
+{
+  "imports": {
+    "@3-/nowts": "npm:@3-/nowts@^0.1.1",
+    "@8v/cron": "jsr:@8v/cron@^0.1.7",
+    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.35",
+    "@8v/hsec": "jsr:@8v/hsec@^0.1.2",
+    "@8v/kind-name": "jsr:@8v/kind-name@^0.1.2",
+    "@8v/needwarn": "jsr:@8v/needwarn@^0.1.4",
+    "@8v/notify": "jsr:@8v/notify@^0.1.3",
+    "@8v/pg": "jsr:@8v/pg@^0.1.3",
+    "@8v/raise": "jsr:@8v/raise@^0.1.4"
+  },
+  "deploy": {
+    "project": "state-warn",
+    "entrypoint": "main.js"
+  },
+  "lint": {
+    "rules": {
+      "exclude": [
+        "no-slow-types",
+        "no-ex-assign"
+      ]
+    }
+  }
+}

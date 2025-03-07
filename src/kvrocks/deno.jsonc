@@ -1,0 +1,21 @@
+{
+  "imports": {
+    "@8v/cron": "jsr:@8v/cron@^0.1.1",
+    "@8v/heartbeat": "jsr:@8v/heartbeat@^0.1.35",
+    "@8v/raise": "jsr:@8v/raise@^0.1.4",
+    "@8v/retry": "jsr:@8v/retry@^0.1.4",
+    "ioredis": "npm:ioredis@^5.5.0"
+  },
+  "deploy": {
+    "project": "state-kvrocks",
+    "entrypoint": "main.js"
+  },
+  "lint": {
+    "rules": {
+      "exclude": [
+        "no-slow-types",
+        "no-ex-assign"
+      ]
+    }
+  }
+}

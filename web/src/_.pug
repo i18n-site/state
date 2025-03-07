@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title #{ title }
+    meta(content="width=device-width,initial-scale=1" name="viewport")
+    link(href=`//${cdnJs}/${font}/_.css` rel="stylesheet")
+    link(href=`//${cdnJs}/${web}/_.css` rel="stylesheet")
+
+    script(type="importmap").
+      {
+        "imports": {
+          "-/": "//#{ cdnJs }/#{ web }/"
+        }
+      }
+    //- script(type="module").
+    //-   (await import("-/srv.js")).default("#{__SRV__}")
+    block head
+  body
+    block body
