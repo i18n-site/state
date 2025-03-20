@@ -63,7 +63,7 @@ pub async fn ping(host: &Host) -> Void {
     .await?
     .text()
     .await?;
-  dbg!((&host.name, &r));
+  // dbg!((&host.name, &r));
   ensure!(r == EXCEPT, format!("{} : {} != {}", host.name, r, EXCEPT));
 
   OK
