@@ -13,7 +13,7 @@ ipv6_proxy = { version = "0.1.0", path = "../ipv6_proxy" }
 loginit = "0.1.18"
 smtp = { version = "0.1.0", path = "../smtp" }
 token_send = "0.1.4"
-tokio = { version = "1.43.0", features = [
+tokio = { version = "1.44.1", features = [
   "macros",
   "rt",
   "rt-multi-thread",

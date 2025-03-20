@@ -9,6 +9,6 @@ description = "host_ip"
 keywords = []
 
 [dependencies]
-sonic-rs = "0.3.17"
+sonic-rs = "0.4.0"
 static_init = "1.0.3"
 tracing = "0.1.41"
