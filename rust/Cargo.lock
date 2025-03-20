@@ -1757,6 +1757,7 @@ dependencies = [
  "static_init",
  "tokio",
  "tracing",
+ "v6proxy",
 ]
 
 [[package]]
@@ -1831,7 +1832,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34"
 dependencies = [
  "cfg-if",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.6",
 ]
 
 [[package]]
@@ -3929,6 +3930,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "458f7a779bf54acc9f347480ac654f68407d3aab21269a6e3c9f922acd9e2da9"
 dependencies = [
  "getrandom 0.3.2",
+]
+
+[[package]]
+name = "v6proxy"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6eb264928305393e56a1186a38558d1e7f5a10e21442ddd2f0fa150515f8e979"
+dependencies = [
+ "aok",
+ "genv",
+ "reqwest",
+ "sonic-rs 0.4.0",
+ "static_init",
 ]
 
 [[package]]

@@ -10,6 +10,7 @@ pg_ = { version = "0.1.1", path = "../pg_", features = ["heartbeat"] }
 reqwest = "0.12.15"
 sonic-rs = "0.4.0"
 static_init = "1.0.3"
+v6proxy = "0.1.1"
 
 [dev-dependencies]
 loginit = "0.1.18"
